@@ -26,7 +26,7 @@ const jetbrains = JetBrains_Mono({
 });
 
 const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nicolasdenigris.dev';
+  process.env.NEXT_PUBLIC_SITE_URL ?? 'https://nicolaspilegidenigris.dev';
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

@@ -44,7 +44,7 @@ See [`.env.example`](./.env.example).
 2. Create a new Railway project → **Deploy from GitHub repo**.
 3. Railway auto-detects Next.js and runs `npm run build` + `npm start`.
 4. Add a custom domain in Railway settings.
-5. Set `NEXT_PUBLIC_SITE_URL` env var to the final URL (e.g. `https://nicolasdenigris.dev`).
+5. Set `NEXT_PUBLIC_SITE_URL` env var to the final URL (e.g. `https://nicolaspilegidenigris.dev`).
 
 `next.config.ts` uses `output: 'standalone'` — Railway's Nixpacks builder handles that transparently and produces a smaller runtime image.
 
