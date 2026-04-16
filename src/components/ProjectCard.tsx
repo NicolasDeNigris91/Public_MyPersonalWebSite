@@ -32,7 +32,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 href={project.repoHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-mist hover:text-platinum transition-colors duration-200"
+                className="text-chrome hover:text-gold-leaf transition-colors duration-200"
                 aria-label="View source code"
               >
                 <GitBranch size={16} strokeWidth={1} />
@@ -43,7 +43,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-mist hover:text-platinum transition-colors duration-200"
+                className="text-chrome hover:text-gold-leaf transition-colors duration-200"
                 aria-label="View live project"
               >
                 <ExternalLink size={16} strokeWidth={1} />
