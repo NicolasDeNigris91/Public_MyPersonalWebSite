@@ -1,6 +1,6 @@
 'use client';
 
-import { motion, type Variants } from 'framer-motion';
+import { AnimatePresence, motion, useReducedMotion, type Variants } from 'framer-motion';
 import { BookOpen, Clock, Plus, Minus } from 'lucide-react';
 import { useState } from 'react';
 import { coursesData } from '@/data/courses';
@@ -31,6 +31,11 @@ export function Courses() {
   const ordered = [...coursesData].reverse();
   const visibleCourses = ordered.slice(0, VISIBLE_COUNT);
   const hiddenCourses = ordered.slice(VISIBLE_COUNT);
+
+  const reduced = useReducedMotion();
+  const containerDuration = reduced ? 0.01 : 0.6;
+  const rowDuration = reduced ? 0.01 : 0.5;
+  const rowDelayStep = reduced ? 0 : 0.04;
 
   return (
     <section id="courses" className="px-8 md:px-16 lg:px-24 py-24 bg-graphite">
@@ -90,29 +95,54 @@ export function Courses() {
             </motion.div>
           ))}
           <div id="courses-hidden">
-            {expanded &&
-              hiddenCourses.map((course) => (
-                <div
-                  key={course.name}
-                  className="group grid grid-cols-[1fr_auto_auto] md:grid-cols-[1fr_180px_80px] items-center
-                             gap-4 md:gap-8 py-4 border-b border-mist/40
-                             hover:bg-carbon/50 transition-colors duration-200 px-4 -mx-4"
+            <AnimatePresence initial={false}>
+              {expanded && (
+                <motion.div
+                  key="courses-hidden-rows"
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{
+                    duration: containerDuration,
+                    ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
+                  }}
+                  style={{ overflow: 'hidden' }}
                 >
-                  <div className="flex items-center gap-3">
-                    <BookOpen size={14} strokeWidth={1} className="text-racing-green-lit flex-shrink-0 hidden md:block" />
-                    <span className="font-sans text-body text-pearl group-hover:text-gold-leaf transition-colors duration-300">
-                      {course.name}
-                    </span>
-                  </div>
-                  <span className="font-mono text-caption text-chrome tracking-wide text-right">
-                    {course.date}
-                  </span>
-                  <span className="font-mono text-caption text-racing-green-lit tracking-wide text-right flex items-center justify-end gap-1">
-                    <Clock size={12} strokeWidth={1} className="hidden md:block" />
-                    {course.hours}
-                  </span>
-                </div>
-              ))}
+                  {hiddenCourses.map((course, i) => (
+                    <motion.div
+                      key={course.name}
+                      initial={{ opacity: 0, x: -16 }}
+                      animate={{
+                        opacity: 1,
+                        x: 0,
+                        transition: {
+                          delay: i * rowDelayStep,
+                          duration: rowDuration,
+                          ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number],
+                        },
+                      }}
+                      className="group grid grid-cols-[1fr_auto_auto] md:grid-cols-[1fr_180px_80px] items-center
+                                 gap-4 md:gap-8 py-4 border-b border-mist/40
+                                 hover:bg-carbon/50 transition-colors duration-200 px-4 -mx-4"
+                    >
+                      <div className="flex items-center gap-3">
+                        <BookOpen size={14} strokeWidth={1} className="text-racing-green-lit flex-shrink-0 hidden md:block" />
+                        <span className="font-sans text-body text-pearl group-hover:text-gold-leaf transition-colors duration-300">
+                          {course.name}
+                        </span>
+                      </div>
+                      <span className="font-mono text-caption text-chrome tracking-wide text-right">
+                        {course.date}
+                      </span>
+                      <span className="font-mono text-caption text-racing-green-lit tracking-wide text-right flex items-center justify-end gap-1">
+                        <Clock size={12} strokeWidth={1} className="hidden md:block" />
+                        {course.hours}
+                      </span>
+                    </motion.div>
+                  ))}
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         </motion.div>
 
