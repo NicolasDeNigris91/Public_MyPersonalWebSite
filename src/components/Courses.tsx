@@ -2,7 +2,10 @@
 
 import { motion, type Variants } from 'framer-motion';
 import { BookOpen, Clock } from 'lucide-react';
+import { useState } from 'react';
 import { coursesData } from '@/data/courses';
+
+const VISIBLE_COUNT = 6;
 
 const containerVariants: Variants = {
   hidden: {},
@@ -23,6 +26,11 @@ export function Courses() {
     const num = parseFloat(c.hours.replace(',', '.').replace('h', ''));
     return sum + num;
   }, 0);
+
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+  const [expanded, setExpanded] = useState(false);
+  const ordered = [...coursesData].reverse();
+  const visibleCourses = ordered.slice(0, VISIBLE_COUNT);
 
   return (
     <section id="courses" className="px-8 md:px-16 lg:px-24 py-24 bg-graphite">
@@ -53,9 +61,9 @@ export function Courses() {
           viewport={{ once: true, margin: '-40px' }}
           className="space-y-0"
         >
-          {coursesData.map((course, i) => (
+          {visibleCourses.map((course) => (
             <motion.div
-              key={i}
+              key={course.name}
               variants={rowVariants}
               className="group grid grid-cols-[1fr_auto_auto] md:grid-cols-[1fr_180px_80px] items-center
                          gap-4 md:gap-8 py-4 border-b border-mist/40
