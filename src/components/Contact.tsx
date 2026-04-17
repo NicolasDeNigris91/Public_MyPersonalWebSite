@@ -3,13 +3,14 @@
 import { motion, type Variants } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { siteConfig } from '@/data/site';
+import { EASE_STANDARD } from '@/lib/motion';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
+    transition: { duration: 0.8, ease: EASE_STANDARD },
   },
 };
 

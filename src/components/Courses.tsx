@@ -4,8 +4,7 @@ import { AnimatePresence, motion, useReducedMotion, type Variants } from 'framer
 import { BookOpen, Clock, Plus, Minus } from 'lucide-react';
 import { useState } from 'react';
 import { coursesData } from '@/data/courses';
-
-const EASE_STANDARD = [0.25, 0.1, 0.25, 1] as [number, number, number, number];
+import { EASE_STANDARD } from '@/lib/motion';
 
 const VISIBLE_COUNT = 6;
 

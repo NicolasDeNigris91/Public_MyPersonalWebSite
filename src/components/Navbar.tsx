@@ -3,13 +3,14 @@
 import { useState, useEffect } from 'react';
 import { motion, type Variants } from 'framer-motion';
 import { siteConfig } from '@/data/site';
+import { EASE_STANDARD } from '@/lib/motion';
 
 const navVariants: Variants = {
   hidden: { opacity: 0, y: -16 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number], delay: 0.2 },
+    transition: { duration: 0.8, ease: EASE_STANDARD, delay: 0.2 },
   },
 };
 

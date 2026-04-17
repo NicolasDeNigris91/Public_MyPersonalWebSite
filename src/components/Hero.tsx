@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion, type Variants } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { siteConfig } from '@/data/site';
+import { EASE_STANDARD } from '@/lib/motion';
 
 const containerVariants: Variants = {
   hidden: {},
@@ -20,7 +21,7 @@ const fadeSlideUp: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1.2, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
+    transition: { duration: 1.2, ease: EASE_STANDARD },
   },
 };
 
@@ -28,7 +29,7 @@ const lineReveal: Variants = {
   hidden: { scaleX: 0, originX: 0 },
   visible: {
     scaleX: 1,
-    transition: { duration: 0.8, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] },
+    transition: { duration: 0.8, ease: EASE_STANDARD },
   },
 };
 

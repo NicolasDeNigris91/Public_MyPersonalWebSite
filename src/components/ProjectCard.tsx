@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ExternalLink, GitBranch } from 'lucide-react';
+import { EASE_STANDARD } from '@/lib/motion';
 import type { Project } from '@/types';
 
 interface ProjectCardProps {
@@ -12,7 +13,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <motion.article
       whileHover={{ y: -4 }}
-      transition={{ duration: 0.3, ease: [0.25, 0.1, 0.25, 1] as [number, number, number, number] }}
+      transition={{ duration: 0.3, ease: EASE_STANDARD }}
       className="group bg-graphite border border-mist hover:border-gold-leaf
                  shadow-card hover:shadow-card-hover transition-all duration-300
                  flex flex-col"
