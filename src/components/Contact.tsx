@@ -4,6 +4,7 @@ import { motion, type Variants } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { siteConfig } from '@/data/site';
 import { EASE_STANDARD } from '@/lib/motion';
+import { CopyEmailLink } from './CopyEmailLink';
 
 const fadeUp: Variants = {
   hidden: { opacity: 0, y: 24 },
@@ -44,8 +45,7 @@ export function Contact() {
               ou conversar sobre as últimas novidades em tecnologia e desenvolvimento
               de software. Fique à vontade para entrar em contato.
             </p>
-            <a
-              href={`mailto:${siteConfig.email}`}
+            <CopyEmailLink
               className="inline-flex items-center gap-3 font-sans text-caption tracking-luxury uppercase
                          border border-platinum text-platinum px-8 py-3
                          hover:bg-platinum hover:text-obsidian transition-colors duration-300
@@ -53,7 +53,7 @@ export function Contact() {
             >
               <Mail size={14} strokeWidth={1} />
               Send Email
-            </a>
+            </CopyEmailLink>
           </motion.div>
 
           {/* Details */}
@@ -62,12 +62,11 @@ export function Contact() {
               <h3 className="font-mono text-caption text-racing-green-lit tracking-luxury uppercase mb-3">
                 Email
               </h3>
-              <a
-                href={`mailto:${siteConfig.email}`}
+              <CopyEmailLink
                 className="font-sans text-body text-pearl hover:text-gold-leaf transition-colors duration-300"
               >
                 {siteConfig.email}
-              </a>
+              </CopyEmailLink>
             </div>
 
             <div>
