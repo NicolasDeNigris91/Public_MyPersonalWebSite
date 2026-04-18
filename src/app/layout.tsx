@@ -31,11 +31,11 @@ const siteUrl =
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
-    template: `%s — ${siteConfig.name}`,
+    default: `${siteConfig.name} | ${siteConfig.tagline}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description:
-    'Portfolio de Nicolas Pilegi De Nigris — software developer em formação, vindo de uma trajetória de 10 anos no mercado de joalharia de luxo.',
+    'Portfolio de Nicolas Pilegi De Nigris, software developer em formação, vindo de uma trajetória de 10 anos no mercado de joalharia de luxo.',
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.name, url: siteConfig.github }],
   creator: siteConfig.name,
@@ -59,13 +59,13 @@ export const metadata: Metadata = {
     locale: 'pt_BR',
     url: '/',
     siteName: siteConfig.name,
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description:
       'Portfolio pessoal com projetos, experiência e estudos. Precisão, craft e depth.',
   },
   twitter: {
     card: 'summary_large_image',
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description:
       'Portfolio pessoal com projetos, experiência e estudos.',
   },

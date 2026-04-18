@@ -4,17 +4,7 @@ import Image from 'next/image';
 import { motion, type Variants } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import { siteConfig } from '@/data/site';
-import { EASE_STANDARD } from '@/lib/motion';
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: {
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.3,
-    },
-  },
-};
+import { EASE_STANDARD, staggerContainer } from '@/lib/motion';
 
 const fadeSlideUp: Variants = {
   hidden: { opacity: 0, y: 32 },
@@ -37,33 +27,29 @@ const subtleFadeIn: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: { duration: 1.4, ease: 'easeOut' as const, delay: 1.0 },
+    transition: { duration: 1.4, ease: EASE_STANDARD, delay: 1.0 },
   },
 };
 
 export function Hero() {
   return (
     <section className="relative min-h-screen flex flex-col justify-center px-8 md:px-16 lg:px-24 py-32">
-      {/* Subtle background texture — vertical rule */}
       <div className="absolute inset-y-0 left-8 md:left-16 lg:left-24 w-px bg-mist opacity-40" />
 
       <motion.div
         className="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-[1fr_auto] gap-12 lg:gap-20 items-center"
-        variants={containerVariants}
+        variants={staggerContainer(0.15, 0.3)}
         initial="hidden"
         animate="visible"
       >
-        {/* Left column — text */}
         <div className="max-w-2xl order-last lg:order-first">
-          {/* Eyebrow label */}
           <motion.p
             variants={fadeSlideUp}
             className="font-mono text-caption text-racing-green-lit tracking-luxury uppercase mb-8"
           >
-            Portfolio — {new Date().getFullYear()}
+            Portfolio · {new Date().getFullYear()}
           </motion.p>
 
-          {/* Name — display serif */}
           <motion.h1
             variants={fadeSlideUp}
             className="font-display text-display-xl text-pearl tracking-tight leading-none mb-4"
@@ -71,13 +57,11 @@ export function Hero() {
             {siteConfig.name}
           </motion.h1>
 
-          {/* Horizontal rule — animated draw */}
           <motion.div
             variants={lineReveal}
             className="h-px bg-gold-leaf w-32 mb-10"
           />
 
-          {/* Lead paragraph */}
           <motion.p
             variants={fadeSlideUp}
             className="font-sans text-body-lg text-chrome leading-relaxed mb-12"
@@ -87,7 +71,6 @@ export function Hero() {
             dedico-me ao estudo intensivo e à prática diária.
           </motion.p>
 
-          {/* CTA row */}
           <motion.div variants={fadeSlideUp} className="flex items-center gap-8">
             <a
               href="#projects"
@@ -107,7 +90,6 @@ export function Hero() {
           </motion.div>
         </div>
 
-        {/* Right column — portrait */}
         <motion.div
           variants={fadeSlideUp}
           className="relative mx-auto lg:mx-0 w-[220px] lg:w-[360px] aspect-[4/5]
@@ -121,26 +103,25 @@ export function Hero() {
             sizes="(min-width: 1024px) 360px, 220px"
             className="object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-[600ms] ease-in-out"
           />
-          {/* Gold-leaf corner accent */}
           <div className="absolute -bottom-px -left-px w-12 h-px bg-gold-leaf" />
           <div className="absolute -bottom-px -left-px w-px h-12 bg-gold-leaf" />
         </motion.div>
 
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.div
         variants={subtleFadeIn}
         initial="hidden"
         animate="visible"
+        aria-hidden="true"
         className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
       >
         <span className="font-mono text-caption text-mist tracking-luxury uppercase">Scroll</span>
         <motion.div
           animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+          transition={{ duration: 2, repeat: Infinity, ease: EASE_STANDARD }}
         >
-          <ArrowDown size={16} strokeWidth={1} className="text-mist" aria-hidden="true" />
+          <ArrowDown size={16} strokeWidth={1} className="text-mist" />
         </motion.div>
       </motion.div>
     </section>

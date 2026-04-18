@@ -4,14 +4,9 @@ import { AnimatePresence, motion, useReducedMotion, type Variants } from 'framer
 import { BookOpen, Clock, Plus, Minus } from 'lucide-react';
 import { useState } from 'react';
 import { coursesData } from '@/data/courses';
-import { EASE_STANDARD } from '@/lib/motion';
+import { EASE_STANDARD, staggerContainer } from '@/lib/motion';
 
 const VISIBLE_COUNT = 6;
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.06 } },
-};
 
 const rowVariants: Variants = {
   hidden: { opacity: 0, x: -16 },
@@ -61,7 +56,7 @@ export function Courses() {
 
         {/* Course list */}
         <motion.div
-          variants={containerVariants}
+          variants={staggerContainer(0.06)}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}

@@ -2,12 +2,7 @@
 
 import { motion, type Variants } from 'framer-motion';
 import { skillsData } from '@/data/site';
-import { EASE_STANDARD } from '@/lib/motion';
-
-const containerVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.08 } },
-};
+import { EASE_STANDARD, staggerContainer } from '@/lib/motion';
 
 const itemVariants: Variants = {
   hidden: { opacity: 0, y: 16 },
@@ -42,7 +37,7 @@ export function Skills() {
           {skillsData.map((skill) => (
             <motion.div
               key={skill.category}
-              variants={containerVariants}
+              variants={staggerContainer(0.08)}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-40px' }}

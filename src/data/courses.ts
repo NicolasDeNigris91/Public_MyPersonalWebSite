@@ -8,7 +8,7 @@ export const coursesData: CourseEntry[] = [
   { name: 'Amazon S3 Storage Course', date: 'Março/2025', hours: '11h' },
   { name: 'Docker & Kubernetes Course', date: 'Abril/2025', hours: '23,5h' },
   { name: 'NextJS Course', date: 'Maio/2025', hours: '15,5h' },
-  { name: 'MERN – Fullstack Guide', date: 'Junho/2025', hours: '19h' },
+  { name: 'MERN: Fullstack Guide', date: 'Junho/2025', hours: '19h' },
   { name: 'Microservices & Event-Driven Architecture', date: 'Junho/2025', hours: '5,5h' },
   { name: 'Agile Scrum', date: 'Junho/2025', hours: '14,5h' },
   { name: 'ASP.NET Course', date: 'Junho/2025', hours: '16h' },

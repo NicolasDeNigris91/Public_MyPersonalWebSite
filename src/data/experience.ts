@@ -5,7 +5,7 @@ export const experienceData: ExperienceEntry[] = [
     id: 'exp-1',
     organisation: 'Kelly Svensson Jewellery',
     role: 'Sales Consultant',
-    period: '2024 — 2024',
+    period: '2024',
     location: 'São Paulo, SP',
     type: 'work',
     highlights: [
@@ -18,7 +18,7 @@ export const experienceData: ExperienceEntry[] = [
     id: 'exp-2',
     organisation: 'Laura Marchi Joalheria',
     role: 'Store Manager',
-    period: '2021 — 2023',
+    period: '2021 - 2023',
     location: 'São Paulo, SP',
     type: 'work',
     highlights: [
@@ -30,9 +30,9 @@ export const experienceData: ExperienceEntry[] = [
   },
   {
     id: 'exp-3',
-    organisation: 'REUAS – Amsterdam Sauer',
+    organisation: 'REUAS / Amsterdam Sauer',
     role: 'Sales Specialist',
-    period: '2018 — 2020',
+    period: '2018 - 2020',
     location: 'São Paulo, SP',
     type: 'work',
     highlights: [
@@ -46,7 +46,7 @@ export const experienceData: ExperienceEntry[] = [
     id: 'edu-1',
     organisation: 'Universidade Anhembi Morumbi',
     role: 'Ciências da Computação',
-    period: '2024 — Atualmente',
+    period: '2024 - Atualmente',
     location: 'São Paulo, SP',
     type: 'education',
     highlights: [],
@@ -56,7 +56,7 @@ export const experienceData: ExperienceEntry[] = [
     id: 'edu-2',
     organisation: 'Universidade Paulista',
     role: 'Comércio Exterior',
-    period: '2012 — 2014',
+    period: '2012 - 2014',
     location: 'São Paulo, SP',
     type: 'education',
     highlights: [],

@@ -3,13 +3,8 @@
 import { motion, type Variants } from 'framer-motion';
 import { Briefcase, GraduationCap, MapPin } from 'lucide-react';
 import { experienceData } from '@/data/experience';
-import { EASE_STANDARD } from '@/lib/motion';
+import { EASE_STANDARD, staggerContainer } from '@/lib/motion';
 import type { ExperienceEntry } from '@/types';
-
-const sectionVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.12 } },
-};
 
 const entryVariants: Variants = {
   hidden: { opacity: 0, x: -24 },
@@ -124,7 +119,7 @@ export function Experience() {
               Work History
             </p>
             <motion.div
-              variants={sectionVariants}
+              variants={staggerContainer(0.12)}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}
@@ -141,7 +136,7 @@ export function Experience() {
               Education
             </p>
             <motion.div
-              variants={sectionVariants}
+              variants={staggerContainer(0.12)}
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: '-60px' }}

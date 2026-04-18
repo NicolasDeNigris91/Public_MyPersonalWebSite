@@ -2,13 +2,8 @@
 
 import { motion, type Variants } from 'framer-motion';
 import { projectsData } from '@/data/projects';
-import { EASE_STANDARD } from '@/lib/motion';
+import { EASE_STANDARD, staggerContainer } from '@/lib/motion';
 import { ProjectCard } from './ProjectCard';
-
-const gridVariants: Variants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.1 } },
-};
 
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 32 },
@@ -43,7 +38,7 @@ export function Projects() {
 
         {/* Featured grid */}
         <motion.div
-          variants={gridVariants}
+          variants={staggerContainer(0.1)}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: '-60px' }}
@@ -59,7 +54,7 @@ export function Projects() {
         {/* Non-featured row */}
         {rest.length > 0 && (
           <motion.div
-            variants={gridVariants}
+            variants={staggerContainer(0.1)}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, margin: '-60px' }}

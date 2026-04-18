@@ -11,20 +11,18 @@ export const projectsData: Project[] = [
     year: 2026,
     repoHref: 'https://github.com/NicolasDeNigris91/MyPersonalWebSite',
     featured: true,
-    imageAlt: 'Screenshot do portfolio pessoal com estética dark luxury',
   },
   {
     id: 'proj-2',
     title: 'Web Accessibility Auditor',
     subtitle: 'Auditor WCAG enterprise-grade',
     description:
-      'Ferramenta de auditoria de acessibilidade para web. Submete uma URL, um worker assíncrono roda Puppeteer + axe-core em uma fila BullMQ, categoriza violações WCAG por severidade e persiste o resultado. Arquitetura limpa em monorepo com API Express, worker isolado, MongoDB, Redis, e dashboard em Next.js — cinco services containerizados rodando em produção.',
+      'Ferramenta de auditoria de acessibilidade para web. Submete uma URL, um worker assíncrono roda Puppeteer + axe-core em uma fila BullMQ, categoriza violações WCAG por severidade e persiste o resultado. Arquitetura limpa em monorepo com API Express, worker isolado, MongoDB, Redis, e dashboard em Next.js. Cinco services containerizados rodando em produção.',
     tags: ['TypeScript', 'Next.js', 'Puppeteer', 'BullMQ', 'MongoDB', 'Docker'],
     year: 2026,
     href: 'https://accessibility.nicolaspilegidenigris.dev',
     repoHref: 'https://github.com/NicolasDeNigris91/AccessibilityProject',
     featured: true,
-    imageAlt: 'Screenshot do dashboard do auditor de acessibilidade',
   },
   {
     id: 'proj-3',
@@ -37,6 +35,5 @@ export const projectsData: Project[] = [
     href: 'https://magic.nicolaspilegidenigris.dev',
     repoHref: 'https://github.com/NicolasDeNigris91/MagicProject',
     featured: true,
-    imageAlt: 'Tabuleiro do MTG Accessible Combat com criaturas no campo',
   },
 ];

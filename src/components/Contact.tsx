@@ -3,7 +3,7 @@
 import { motion, type Variants } from 'framer-motion';
 import { Mail, MapPin, Phone } from 'lucide-react';
 import { siteConfig } from '@/data/site';
-import { EASE_STANDARD } from '@/lib/motion';
+import { EASE_STANDARD, staggerContainer } from '@/lib/motion';
 import { CopyEmailLink } from './CopyEmailLink';
 
 const fadeUp: Variants = {
@@ -20,10 +20,10 @@ export function Contact() {
     <section id="contact" className="px-8 md:px-16 lg:px-24 py-24 bg-graphite">
       <motion.div
         className="max-w-5xl mx-auto"
+        variants={staggerContainer(0.12)}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: '-80px' }}
-        transition={{ staggerChildren: 0.12 }}
       >
         {/* Section heading */}
         <motion.div variants={fadeUp} className="mb-16">
