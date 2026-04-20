@@ -6,7 +6,7 @@ export const projectsData: Project[] = [
     title: 'Portfolio Pessoal',
     subtitle: 'Site pessoal',
     description:
-      'Website pessoal desenvolvido com Next.js 16, TypeScript e Tailwind CSS v4. Apresenta animações cinematográficas com Framer Motion, arquitetura data-driven com interfaces tipadas, e um design system personalizado com paleta de cores sofisticada e tipografia premium.',
+      'Website pessoal pensado como peça de design tanto quanto de engenharia. Cada secção vive num modelo de dados tipado, cada transição carrega intenção estética. Stack em Next.js 16, TypeScript e Tailwind CSS v4, com animações em Framer Motion e um design system próprio da paleta aos tokens tipográficos. Deploy contínuo no Railway.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     year: 2026,
     repoHref: 'https://github.com/NicolasDeNigris91/MyPersonalWebSite',
