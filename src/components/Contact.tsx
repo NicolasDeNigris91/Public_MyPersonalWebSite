@@ -41,9 +41,7 @@ export function Contact() {
           {/* Message */}
           <motion.div variants={fadeUp}>
             <p className="font-sans text-body-lg text-chrome leading-relaxed mb-8">
-              Aberto a conectar com outros profissionais, explorar novas oportunidades
-              ou conversar sobre as últimas novidades em tecnologia e desenvolvimento
-              de software. Fique à vontade para entrar em contato.
+              Disponível para novas oportunidades em desenvolvimento de software.
             </p>
             <CopyEmailLink
               className="inline-flex items-center gap-3 font-sans text-caption tracking-luxury uppercase
