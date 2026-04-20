@@ -66,9 +66,9 @@ export function Hero() {
             variants={fadeSlideUp}
             className="font-sans text-body-lg text-chrome leading-relaxed mb-12"
           >
-            Vindo de uma trajetória de 10 anos no mercado de joalharia de luxo,
-            decidi transitar para o desenvolvimento de software. Atualmente,
-            dedico-me ao estudo intensivo e à prática diária.
+            Depois de dez anos na joalharia de luxo, reorientei a carreira para
+            o desenvolvimento de software. Hoje construo aplicações web full
+            stack.
           </motion.p>
 
           <motion.div variants={fadeSlideUp} className="flex items-center gap-8">
