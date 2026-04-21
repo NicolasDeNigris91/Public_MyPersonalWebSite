@@ -36,4 +36,15 @@ export const projectsData: Project[] = [
     repoHref: 'https://github.com/NicolasDeNigris91/MagicProject',
     featured: true,
   },
+  {
+    id: 'proj-4',
+    title: 'Postgres → MongoDB CDC',
+    subtitle: 'Pipeline de migração zero-downtime com chaos testing',
+    description:
+      'Pipeline idempotente de Change Data Capture para migrar Postgres para MongoDB sem parar escritas. Debezium captura o WAL via replication slot, transformer em Go aplica mapeamentos YAML, sink em Go faz upserts LSN-gated no MongoDB. Sobrevive a quatro SIGKILLs consecutivos do sink com zero perda e zero duplicação, validado por suíte de cinco cenários de chaos e ~7,3k escritas/seg sustentadas. Helm chart e docker-compose de produção empacotados para deployment Kubernetes.',
+    tags: ['Go', 'Postgres', 'MongoDB', 'Kafka', 'Debezium', 'Helm'],
+    year: 2026,
+    repoHref: 'https://github.com/NicolasDeNigris91/Pg2MongoCdC',
+    featured: true,
+  },
 ];
