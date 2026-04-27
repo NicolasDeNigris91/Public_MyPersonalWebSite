@@ -22,6 +22,7 @@ export function CopyEmailLink({ className, children, ariaLabel }: CopyEmailLinkP
   const reduced = useReducedMotion();
 
   useEffect(() => {
+    // SSR guard for createPortal: render the toast only after hydration.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     setMounted(true);
     return () => {

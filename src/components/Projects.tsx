@@ -21,7 +21,6 @@ export function Projects() {
   return (
     <section id="projects" className="px-8 md:px-16 lg:px-24 py-24 bg-graphite">
       <div className="max-w-5xl mx-auto">
-        {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -36,7 +35,6 @@ export function Projects() {
           <div className="h-px bg-gold-leaf w-24 mt-4" />
         </motion.div>
 
-        {/* Featured grid */}
         <motion.div
           variants={staggerContainer(0.1)}
           initial="hidden"
@@ -51,7 +49,6 @@ export function Projects() {
           ))}
         </motion.div>
 
-        {/* Non-featured row */}
         {rest.length > 0 && (
           <motion.div
             variants={staggerContainer(0.1)}

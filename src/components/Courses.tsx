@@ -36,7 +36,6 @@ export function Courses() {
   return (
     <section id="courses" className="px-8 md:px-16 lg:px-24 py-24 bg-graphite">
       <div className="max-w-5xl mx-auto">
-        {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -54,7 +53,6 @@ export function Courses() {
           </p>
         </motion.div>
 
-        {/* Course list */}
         <motion.div
           variants={staggerContainer(0.06)}
           initial="hidden"
@@ -70,7 +68,6 @@ export function Courses() {
                          gap-4 md:gap-8 py-4 border-b border-mist/40
                          hover:bg-carbon/50 transition-colors duration-200 px-4 -mx-4"
             >
-              {/* Course name */}
               <div className="flex items-center gap-3">
                 <BookOpen size={14} strokeWidth={1} className="text-racing-green-lit flex-shrink-0 hidden md:block" />
                 <span className="font-sans text-body text-pearl group-hover:text-gold-leaf transition-colors duration-300">
@@ -78,19 +75,16 @@ export function Courses() {
                 </span>
               </div>
 
-              {/* Date */}
               <span className="font-mono text-caption text-chrome tracking-wide text-right">
                 {course.date}
               </span>
 
-              {/* Hours */}
               <span className="font-mono text-caption text-racing-green-lit tracking-wide text-right flex items-center justify-end gap-1">
                 <Clock size={12} strokeWidth={1} className="hidden md:block" />
                 {course.hours}
               </span>
             </motion.div>
           ))}
-          {/* Always mounted so aria-controls resolves while collapsed. */}
           <div id="courses-hidden">
             <AnimatePresence initial={false}>
               {expanded && (

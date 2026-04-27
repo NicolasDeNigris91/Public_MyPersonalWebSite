@@ -44,7 +44,6 @@ export function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 md:px-16 lg:px-24 py-5">
-        {/* Logo / Name */}
         <a
           href="#"
           className="font-display text-lg text-pearl tracking-wide hover:text-gold-leaf transition-colors duration-300"
@@ -52,7 +51,6 @@ export function Navbar() {
           {siteConfig.name.split(' ').map((word) => word[0]).join('')}
         </a>
 
-        {/* Nav links */}
         <div className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a
@@ -66,7 +64,6 @@ export function Navbar() {
           ))}
         </div>
 
-        {/* CTA */}
         <CopyEmailLink
           className="font-sans text-caption tracking-luxury uppercase border border-mist text-chrome
                      px-5 py-2 hover:border-platinum hover:text-platinum transition-colors duration-300

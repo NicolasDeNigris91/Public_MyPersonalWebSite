@@ -8,7 +8,7 @@ export function Footer() {
           &copy; {new Date().getFullYear()} {siteConfig.name}. All rights reserved.
         </p>
         <p className="font-mono text-caption text-mist tracking-wide">
-          [Built with Next.js · Designed with care]
+          Built with Next.js
         </p>
       </div>
     </footer>

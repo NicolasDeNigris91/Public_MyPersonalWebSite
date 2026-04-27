@@ -27,15 +27,12 @@ function ExperienceEntryCard({ entry }: EntryProps) {
       variants={entryVariants}
       className="group relative grid grid-cols-[1px_1fr] gap-8"
     >
-      {/* Timeline spine */}
       <div className="relative flex flex-col items-center">
         <div className="w-px flex-1 bg-mist" />
         <div className="absolute top-3 w-2 h-2 rounded-full bg-racing-green-lit ring-4 ring-obsidian" />
       </div>
 
-      {/* Content */}
       <div className="pb-12 pl-4">
-        {/* Header */}
         <div className="flex flex-wrap items-start justify-between gap-4 mb-3">
           <div>
             <div className="flex items-center gap-2 mb-1">
@@ -56,10 +53,8 @@ function ExperienceEntryCard({ entry }: EntryProps) {
           </div>
         </div>
 
-        {/* Divider */}
         <div className="h-px bg-mist mb-4" />
 
-        {/* Highlights */}
         {entry.highlights.length > 0 && (
           <ul className="space-y-2 mb-4">
             {entry.highlights.map((highlight) => (
@@ -71,7 +66,6 @@ function ExperienceEntryCard({ entry }: EntryProps) {
           </ul>
         )}
 
-        {/* Tags */}
         {entry.tags && entry.tags.length > 0 && (
           <div className="flex flex-wrap gap-2">
             {entry.tags.map((tag, i) => (
@@ -96,7 +90,6 @@ export function Experience() {
   return (
     <section id="experience" className="px-8 md:px-16 lg:px-24 py-24">
       <div className="max-w-5xl mx-auto">
-        {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -111,9 +104,7 @@ export function Experience() {
           <div className="h-px bg-gold-leaf w-24 mt-4" />
         </motion.div>
 
-        {/* Two-column layout on large screens */}
         <div className="grid lg:grid-cols-2 gap-16">
-          {/* Work */}
           <div>
             <p className="font-mono text-caption text-chrome tracking-luxury uppercase mb-8">
               Work History
@@ -130,7 +121,6 @@ export function Experience() {
             </motion.div>
           </div>
 
-          {/* Education */}
           <div>
             <p className="font-mono text-caption text-chrome tracking-luxury uppercase mb-8">
               Education
