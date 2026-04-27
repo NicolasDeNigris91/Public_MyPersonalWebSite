@@ -25,20 +25,17 @@ export function Contact() {
         whileInView="visible"
         viewport={{ once: true, margin: '-80px' }}
       >
-        {/* Section heading */}
         <motion.div variants={fadeUp} className="mb-16">
-          <p className="font-mono text-caption text-racing-green-lit tracking-luxury uppercase mb-3">
-            Get in Touch
-          </p>
+          <div className="h-px bg-gold-leaf w-16 mb-6" />
           <h2 className="font-display text-display-lg text-pearl">
             Let&rsquo;s Connect
           </h2>
-          <div className="h-px bg-gold-leaf w-24 mt-4" />
+          <p className="font-mono text-caption text-chrome tracking-luxury uppercase mt-3">
+            Get in Touch
+          </p>
         </motion.div>
 
-        {/* Contact content */}
         <div className="grid md:grid-cols-2 gap-16">
-          {/* Message */}
           <motion.div variants={fadeUp}>
             <p className="font-sans text-body-lg text-chrome leading-relaxed mb-8">
               Disponível para novas oportunidades em desenvolvimento de software.
@@ -54,7 +51,6 @@ export function Contact() {
             </CopyEmailLink>
           </motion.div>
 
-          {/* Details */}
           <motion.div variants={fadeUp} className="space-y-8">
             <div>
               <h3 className="font-mono text-caption text-racing-green-lit tracking-luxury uppercase mb-3">

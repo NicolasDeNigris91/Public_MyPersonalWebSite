@@ -17,22 +17,17 @@ export function Skills() {
   return (
     <section id="skills" className="px-8 md:px-16 lg:px-24 py-24">
       <div className="max-w-5xl mx-auto">
-        {/* Section heading */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8, ease: EASE_STANDARD }}
-          className="mb-16"
+          className="mb-16 flex flex-col"
         >
-          <p className="font-mono text-caption text-racing-green-lit tracking-luxury uppercase mb-3">
-            Expertise
-          </p>
           <h2 className="font-display text-display-lg text-pearl">Skills &amp; Tools</h2>
-          <div className="h-px bg-gold-leaf w-24 mt-4" />
+          <div className="h-px bg-gold-leaf w-32 mt-6" />
         </motion.div>
 
-        {/* Skills grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12">
           {skillsData.map((skill) => (
             <motion.div

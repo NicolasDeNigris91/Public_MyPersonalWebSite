@@ -6,7 +6,7 @@ export const projectsData: Project[] = [
     title: 'Portfolio Pessoal',
     subtitle: 'Site pessoal',
     description:
-      'Website pessoal pensado como peça de design tanto quanto de engenharia. Cada secção vive num modelo de dados tipado, cada transição carrega intenção estética. Stack em Next.js 16, TypeScript e Tailwind CSS v4, com animações em Framer Motion e um design system próprio da paleta aos tokens tipográficos. Deploy contínuo no Railway.',
+      'Meu site pessoal, feito em Next.js 16 com TypeScript, Tailwind v4 e Framer Motion. Desenhei a paleta e a tipografia do zero porque queria algo que parecesse meu, não mais um template. Deploy roda no Railway.',
     tags: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     year: 2026,
     repoHref: 'https://github.com/NicolasDeNigris91/MyPersonalWebSite',
@@ -15,9 +15,9 @@ export const projectsData: Project[] = [
   {
     id: 'proj-2',
     title: 'Web Accessibility Auditor',
-    subtitle: 'Auditor WCAG enterprise-grade',
+    subtitle: 'Auditor de acessibilidade WCAG',
     description:
-      'Ferramenta de auditoria de acessibilidade para web. Submete uma URL, um worker assíncrono roda Puppeteer + axe-core em uma fila BullMQ, categoriza violações WCAG por severidade e persiste o resultado. Arquitetura limpa em monorepo com API Express, worker isolado, MongoDB, Redis, e dashboard em Next.js. Cinco services containerizados rodando em produção.',
+      'Você cola uma URL e a ferramenta roda Puppeteer com axe-core num worker em background, agrupa as violações por severidade e devolve um relatório. É um monorepo com API em Express, worker, dashboard em Next.js, MongoDB e Redis, tudo em containers.',
     tags: ['TypeScript', 'Next.js', 'Puppeteer', 'BullMQ', 'MongoDB', 'Docker'],
     year: 2026,
     href: 'https://accessibility.nicolaspilegidenigris.dev',
@@ -27,9 +27,9 @@ export const projectsData: Project[] = [
   {
     id: 'proj-3',
     title: 'MTG Accessible Combat',
-    subtitle: 'TCG keyboard-first e screen-reader-first',
+    subtitle: 'TCG jogável por teclado e leitor de tela',
     description:
-      'Demo jogável de Magic: The Gathering construída com a premissa de que jogadores cegos e videntes devem receber informação equivalente. Cada carta carrega uma descrição acessível como dado de primeira classe, servindo simultaneamente aria-label, log de combate e anúncios em live regions. Engine de regras pura e framework-agnóstica, orquestração via Zustand, animações com Framer Motion que colapsam sob prefers-reduced-motion. Deck real via Scryfall API com fallback offline.',
+      'Demo de Magic: The Gathering pensada para ser jogada por teclado ou leitor de tela com a mesma fluidez de um mouse. A descrição acessível de cada carta é dado de primeira classe e alimenta aria-labels, log de combate e live regions. Engine de regras separada da UI, estado em Zustand, animações respeitam prefers-reduced-motion. Cartas vêm da API do Scryfall com fallback offline.',
     tags: ['Next.js', 'TypeScript', 'Zustand', 'Framer Motion', 'Scryfall API', 'WCAG'],
     year: 2026,
     href: 'https://magic.nicolaspilegidenigris.dev',
@@ -41,7 +41,7 @@ export const projectsData: Project[] = [
     title: 'Unholy Bastion',
     subtitle: 'Roguelike turn-based em Godot, exportado para WebAssembly',
     description:
-      'Roguelike turn-based de 30 andares construído em Godot 4 e GDScript, jogável direto no navegador via WebAssembly. Cinco atos com biomas distintos, sistema de altares de sacrifício, dois finais ramificados a partir de um único objeto colhido no andar 28, habilidades ativas por arma com cooldown, e cinemáticas pós-boss com sussurros fantasmagóricos. Renderização gl_compatibility para suporte amplo, dual-layer fog-of-war via TileMapLayer, FOV por raycasting, e arquitetura de combate estática para zero alocação por turno. Servido em produção via Caddy com headers cross-origin isolation para SharedArrayBuffer.',
+      'Roguelike por turnos que fiz em Godot 4 e GDScript, exportado para o navegador via WebAssembly. Cinco atos, trinta andares, dois finais possíveis dependendo do que você decide carregar até o boss. Servido em produção atrás de Caddy com os headers de cross-origin isolation que o WASM exige.',
     tags: ['Godot', 'GDScript', 'WebAssembly', 'Caddy', 'Roguelike', 'Game Design'],
     year: 2026,
     href: 'https://unholybastion.nicolaspilegidenigris.dev',
@@ -51,9 +51,9 @@ export const projectsData: Project[] = [
   {
     id: 'proj-4',
     title: 'Postgres → MongoDB CDC',
-    subtitle: 'Pipeline de migração zero-downtime com chaos testing',
+    subtitle: 'Pipeline de migração com chaos testing',
     description:
-      'Pipeline idempotente de Change Data Capture para migrar Postgres para MongoDB sem parar escritas. Debezium captura o WAL via replication slot, transformer em Go aplica mapeamentos YAML, sink em Go faz upserts LSN-gated no MongoDB. Sobrevive a quatro SIGKILLs consecutivos do sink com zero perda e zero duplicação, validado por suíte de cinco cenários de chaos e ~7,3k escritas/seg sustentadas. Helm chart e docker-compose de produção empacotados para deployment Kubernetes.',
+      'Pipeline idempotente de Change Data Capture para migrar de Postgres para Mongo sem precisar parar de escrever no banco de origem. Debezium lê o WAL, um transformer em Go aplica os mapeamentos e o sink faz upsert no Mongo controlado por LSN. Rodei uma bateria de testes de chaos matando o sink no meio da carga e ele se recupera sem perder nem duplicar evento.',
     tags: ['Go', 'Postgres', 'MongoDB', 'Kafka', 'Debezium', 'Helm'],
     year: 2026,
     repoHref: 'https://github.com/NicolasDeNigris91/Pg2MongoCdC',
