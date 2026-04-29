@@ -49,6 +49,18 @@ export const projectsData: Project[] = [
     featured: true,
   },
   {
+    id: 'proj-6',
+    title: 'Fathom',
+    subtitle: 'Framework de maestria full-stack (Novice → Staff)',
+    description:
+      'Trilha estruturada de iniciante real até Staff/Principal Engineer, com 66 módulos densos, 5 capstones encadeados sobre o mesmo produto (Logística), portões de avaliação e protocolo de mentor. Conteúdo em Markdown sob CC BY-NC 4.0; site em Next.js 16 lê o framework do filesystem em runtime, com command palette, glossário, sitemap e validador de conteúdo no prebuild. Cada link cruzado entre estágios é checado por um script Node antes do build.',
+    tags: ['Next.js', 'TypeScript', 'Tailwind v4', 'Markdown', 'Vitest', 'Docker', 'Railway'],
+    year: 2026,
+    href: 'https://fathom.nicolaspilegidenigris.dev',
+    repoHref: 'https://github.com/NicolasDeNigris91/FATHOM',
+    featured: true,
+  },
+  {
     id: 'proj-4',
     title: 'Postgres → MongoDB CDC',
     subtitle: 'Pipeline de migração com chaos testing',
