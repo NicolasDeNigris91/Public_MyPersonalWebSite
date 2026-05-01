@@ -1,5 +1,9 @@
 # Nicolas De Nigris - Personal Portfolio
 
+[![CI](https://github.com/NicolasDeNigris91/Public_MyPersonalWebSite/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/NicolasDeNigris91/Public_MyPersonalWebSite/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/NicolasDeNigris91/Public_MyPersonalWebSite/actions/workflows/codeql.yml/badge.svg?branch=main)](https://github.com/NicolasDeNigris91/Public_MyPersonalWebSite/actions/workflows/codeql.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+
 Meu portfólio pessoal. Projetos, experiência e estudos.
 
 ## Stack
