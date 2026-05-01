@@ -1,0 +1,45 @@
+name: Bug report
+description: Report a broken page, layout, or accessibility issue.
+title: "[bug] "
+labels: ["bug", "triage"]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+    validations:
+      required: true
+
+  - type: input
+    id: page
+    attributes:
+      label: Page / URL
+      placeholder: "/projects, /experience, ..."
+    validations:
+      required: true
+
+  - type: input
+    id: env
+    attributes:
+      label: Browser / OS
+      placeholder: "Chrome 131 on macOS 15, iOS 18 Safari, ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+
+  - type: textarea
+    id: screenshot
+    attributes:
+      label: Screenshot / video (optional)
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
