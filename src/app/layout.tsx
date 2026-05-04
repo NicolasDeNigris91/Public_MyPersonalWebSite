@@ -7,6 +7,7 @@ import {
   websiteSchema,
 } from '@/components/seo/JsonLd';
 import { WebVitals } from '@/components/WebVitals';
+import { MotionProvider } from '@/components/MotionProvider';
 import './globals.css';
 
 const cormorant = Cormorant_Garamond({
@@ -116,7 +117,7 @@ export default function RootLayout({
         <JsonLd id="ld-person" schema={personSchema(siteConfig, siteUrl)} />
         <JsonLd id="ld-website" schema={websiteSchema(siteConfig, siteUrl)} />
         <WebVitals />
-        {children}
+        <MotionProvider>{children}</MotionProvider>
       </body>
     </html>
   );

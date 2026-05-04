@@ -1,0 +1,12 @@
+'use client';
+
+import { MotionConfig } from 'framer-motion';
+import type { ReactNode } from 'react';
+
+export function MotionProvider({ children }: { children: ReactNode }) {
+  return (
+    <MotionConfig reducedMotion="user" transition={{ ease: [0.25, 0.1, 0.25, 1] }}>
+      {children}
+    </MotionConfig>
+  );
+}

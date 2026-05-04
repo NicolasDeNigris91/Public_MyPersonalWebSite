@@ -1,7 +1,6 @@
 import type { MetadataRoute } from 'next';
 
 const SECTIONS = [
-  'about',
   'courses',
   'projects',
   'experience',
