@@ -1,3 +1,4 @@
+import { headers } from 'next/headers';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { Courses } from '@/components/Courses';
@@ -17,11 +18,15 @@ const featuredProjects = projectsData.filter(
   (project) => project.featured && (project.href || project.repoHref),
 );
 
-export default function Home() {
+export default async function Home() {
+  const headerList = await headers();
+  const nonce = headerList.get('x-nonce') ?? undefined;
+
   return (
     <>
       <JsonLd
         id="ld-projects"
+        nonce={nonce}
         schema={creativeWorkListSchema(featuredProjects, siteConfig, siteUrl)}
       />
       <Navbar />

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Cormorant_Garamond, Inter, JetBrains_Mono } from 'next/font/google';
+import { headers } from 'next/headers';
 import { siteConfig } from '@/data/site';
 import { JsonLd, personSchema, websiteSchema } from '@/components/seo/JsonLd';
 import { WebVitals } from '@/components/WebVitals';
@@ -90,11 +91,14 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const headerList = await headers();
+  const nonce = headerList.get('x-nonce') ?? undefined;
+
   return (
     <html
       lang="pt-BR"
@@ -107,8 +111,16 @@ export default function RootLayout({
         >
           Skip to content
         </a>
-        <JsonLd id="ld-person" schema={personSchema(siteConfig, siteUrl)} />
-        <JsonLd id="ld-website" schema={websiteSchema(siteConfig, siteUrl)} />
+        <JsonLd
+          id="ld-person"
+          nonce={nonce}
+          schema={personSchema(siteConfig, siteUrl)}
+        />
+        <JsonLd
+          id="ld-website"
+          nonce={nonce}
+          schema={websiteSchema(siteConfig, siteUrl)}
+        />
         <WebVitals />
         <MotionProvider>{children}</MotionProvider>
       </body>

@@ -69,11 +69,20 @@ export function creativeWorkListSchema(
   };
 }
 
-export function JsonLd({ schema, id }: { schema: Schema; id: string }) {
+export function JsonLd({
+  schema,
+  id,
+  nonce,
+}: {
+  schema: Schema;
+  id: string;
+  nonce?: string;
+}) {
   return (
     <script
       type="application/ld+json"
       id={id}
+      nonce={nonce}
       dangerouslySetInnerHTML={{
         __html: JSON.stringify(schema).replace(/</g, '\\u003c'),
       }}
