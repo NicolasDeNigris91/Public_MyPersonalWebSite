@@ -34,4 +34,23 @@ describe('Navbar', () => {
     ).toBeNull();
     expect(trigger).toHaveFocus();
   });
+
+  it('traps focus inside the mobile dialog with Tab', async () => {
+    const user = userEvent.setup();
+    render(<Navbar />);
+    await user.click(screen.getByRole('button', { name: /abrir menu/i }));
+
+    const dialog = screen.getByRole('dialog', { name: /menu de navegação/i });
+    const focusables = dialog.querySelectorAll<HTMLElement>(
+      'a[href], button:not([disabled])',
+    );
+    expect(focusables.length).toBeGreaterThan(1);
+    const last = focusables[focusables.length - 1];
+    last.focus();
+    expect(last).toHaveFocus();
+
+    await user.keyboard('{Tab}');
+    // Tab from the last focusable should cycle back to the first.
+    expect(focusables[0]).toHaveFocus();
+  });
 });

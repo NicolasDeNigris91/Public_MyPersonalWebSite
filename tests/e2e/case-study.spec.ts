@@ -44,6 +44,37 @@ test.describe('case study', () => {
     expect(parsed.author?.name).toBe('Nicolas Pilegi De Nigris');
   });
 
+  test('navigates from a project card on the home into the case study', async ({
+    page,
+  }) => {
+    await page.goto('/');
+    await page
+      .getByRole('link', { name: /ler case study de portfolio pessoal/i })
+      .first()
+      .click();
+    await expect(page).toHaveURL(/\/projects\/portfolio\/?$/);
+    await expect(page.getByRole('heading', { level: 1 })).toContainText(
+      'Portfolio Pessoal',
+    );
+  });
+
+  test('shared title carries a view-transition-name on both ends', async ({
+    page,
+  }) => {
+    await page.goto('/');
+    const cardTitleStyle = await page
+      .locator('#projects h3', { hasText: 'Portfolio Pessoal' })
+      .first()
+      .evaluate((el) => (el as HTMLElement).style.viewTransitionName);
+    expect(cardTitleStyle).toBe('project-title-portfolio');
+
+    await page.goto('/projects/portfolio');
+    const headingStyle = await page
+      .locator('h1', { hasText: 'Portfolio Pessoal' })
+      .evaluate((el) => (el as HTMLElement).style.viewTransitionName);
+    expect(headingStyle).toBe('project-title-portfolio');
+  });
+
   test('case study page has no serious or critical axe violations', async ({
     page,
   }) => {
