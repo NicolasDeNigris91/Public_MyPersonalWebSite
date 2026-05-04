@@ -59,14 +59,24 @@ export const caseStudiesData: CaseStudy[] = [
     },
     beforeAfter: [
       {
-        label: 'Bundle JS first-load (home, gzip)',
-        before: 'TBD após análise',
-        after: 'TBD após análise',
+        label: 'Maior chunk client (gzip)',
+        before: 'sem split',
+        after: '70 KB',
       },
       {
-        label: 'Lighthouse Performance (mobile)',
-        before: 'TBD inicial',
-        after: '>= 95 (gate de CI)',
+        label: 'Top-5 chunks somados (gzip)',
+        before: 'sem split',
+        after: '217 KB',
+      },
+      {
+        label: 'Lighthouse Performance (gate)',
+        before: 'sem CI de perf',
+        after: '>= 95 desktop',
+      },
+      {
+        label: 'a11y violations serious/critical (gate)',
+        before: 'sem CI de a11y',
+        after: '0',
       },
     ],
     diagram: 'portfolio',
