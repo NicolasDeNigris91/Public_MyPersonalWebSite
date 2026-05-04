@@ -31,6 +31,8 @@ export default defineConfig({
         'src/components/Monogram.tsx',
         'src/components/NavLink.tsx',
         'src/components/BackToTop.tsx',
+        'src/components/ContactForm.tsx',
+        'src/components/MagneticCTA.tsx',
       ],
       thresholds: {
         lines: 70,
