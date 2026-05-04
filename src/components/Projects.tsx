@@ -2,8 +2,13 @@
 
 import { motion, type Variants } from 'framer-motion';
 import { projectsData } from '@/data/projects';
+import { caseStudiesData } from '@/data/case-studies';
 import { EASE_STANDARD, staggerContainer } from '@/lib/motion';
 import { ProjectCard } from './ProjectCard';
+
+const caseStudyByProjectId = new Map(
+  caseStudiesData.map((cs) => [cs.projectId, cs.slug]),
+);
 
 const cardVariants: Variants = {
   hidden: { opacity: 0, y: 32 },
@@ -44,7 +49,10 @@ export function Projects() {
         >
           {featured.map((project) => (
             <motion.div key={project.id} variants={cardVariants}>
-              <ProjectCard project={project} />
+              <ProjectCard
+                project={project}
+                caseStudySlug={caseStudyByProjectId.get(project.id)}
+              />
             </motion.div>
           ))}
         </motion.div>
@@ -59,7 +67,10 @@ export function Projects() {
           >
             {rest.map((project) => (
               <motion.div key={project.id} variants={cardVariants}>
-                <ProjectCard project={project} />
+                <ProjectCard
+                  project={project}
+                  caseStudySlug={caseStudyByProjectId.get(project.id)}
+                />
               </motion.div>
             ))}
           </motion.div>

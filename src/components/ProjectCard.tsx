@@ -1,15 +1,17 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ExternalLink, GitBranch } from 'lucide-react';
+import { ExternalLink, GitBranch, BookOpen } from 'lucide-react';
 import { EASE_STANDARD } from '@/lib/motion';
 import type { Project } from '@/types';
 
 interface ProjectCardProps {
   project: Project;
+  caseStudySlug?: string;
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, caseStudySlug }: ProjectCardProps) {
   return (
     <motion.article
       whileHover={{ y: -4 }}
@@ -27,6 +29,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
             {project.year}
           </time>
           <div className="flex items-center gap-3">
+            {caseStudySlug && (
+              <Link
+                href={`/projects/${caseStudySlug}`}
+                className="text-chrome hover:text-gold-leaf focus-visible:outline-platinum transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+                aria-label={`Ler case study de ${project.title}`}
+              >
+                <BookOpen size={16} strokeWidth={1} />
+              </Link>
+            )}
             {project.repoHref && (
               <a
                 href={project.repoHref}
@@ -53,7 +64,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <h3 className="font-display text-display-md text-pearl group-hover:text-gold-leaf mb-1 transition-colors duration-300">
-          {project.title}
+          {caseStudySlug ? (
+            <Link
+              href={`/projects/${caseStudySlug}`}
+              className="focus-visible:outline-platinum focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+            >
+              {project.title}
+            </Link>
+          ) : (
+            project.title
+          )}
         </h3>
 
         <p className="text-caption text-chrome mb-4 font-sans tracking-wide uppercase">

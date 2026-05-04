@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next';
+import { caseStudiesData } from '@/data/case-studies';
 
 const SECTIONS = [
   'courses',
@@ -43,5 +44,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: page.priority,
   }));
 
-  return [home, ...sections, ...pages];
+  const caseStudies: MetadataRoute.Sitemap = caseStudiesData.map((cs) => ({
+    url: `${base}/projects/${cs.slug}`,
+    lastModified,
+    changeFrequency: 'monthly',
+    priority: 0.7,
+  }));
+
+  return [home, ...sections, ...pages, ...caseStudies];
 }
