@@ -7,6 +7,7 @@ import { WebVitals } from '@/components/WebVitals';
 import { MotionProvider } from '@/components/MotionProvider';
 import { BackToTop } from '@/components/BackToTop';
 import { ConsoleSignature } from '@/components/ConsoleSignature';
+import { PlausibleScript } from '@/components/PlausibleScript';
 import './globals.css';
 
 const cormorant = Cormorant_Garamond({
@@ -125,6 +126,11 @@ export default async function RootLayout({
         />
         <WebVitals />
         <ConsoleSignature />
+        <PlausibleScript
+          domain={process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN}
+          host={process.env.NEXT_PUBLIC_PLAUSIBLE_HOST}
+          nonce={nonce}
+        />
         <MotionProvider>{children}</MotionProvider>
         <BackToTop />
       </body>

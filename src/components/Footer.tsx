@@ -26,6 +26,12 @@ export function Footer() {
           >
             Now
           </Link>
+          <Link
+            href="/contact"
+            className="hover:text-pearl transition-colors duration-300"
+          >
+            Contato
+          </Link>
           <a
             href="/cv.pdf"
             className="hover:text-pearl transition-colors duration-300"

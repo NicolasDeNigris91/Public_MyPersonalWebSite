@@ -6,6 +6,7 @@ import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import { siteConfig } from '@/data/site';
 import { EASE_STANDARD } from '@/lib/motion';
+import { track } from '@/lib/analytics';
 
 const TOAST_VISIBLE_MS = 2500;
 
@@ -37,6 +38,7 @@ export function CopyEmailLink({
   const handleClick = () => {
     navigator.clipboard?.writeText(siteConfig.email);
     setShowToast(true);
+    track('copy_email');
     if (timeoutRef.current) clearTimeout(timeoutRef.current);
     timeoutRef.current = setTimeout(
       () => setShowToast(false),

@@ -11,9 +11,23 @@ function generateNonce() {
 }
 
 function buildCsp(nonce: string, isDev: boolean) {
-  const scriptSrc = isDev
-    ? `'self' 'nonce-${nonce}' 'strict-dynamic' 'unsafe-eval'`
-    : `'self' 'nonce-${nonce}' 'strict-dynamic'`;
+  const plausibleHost = (
+    process.env.NEXT_PUBLIC_PLAUSIBLE_HOST ?? 'https://plausible.io'
+  ).replace(/\/$/, '');
+  const plausibleEnabled = Boolean(process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN);
+
+  const scriptSrc = [
+    `'self'`,
+    `'nonce-${nonce}'`,
+    `'strict-dynamic'`,
+    isDev ? `'unsafe-eval'` : null,
+  ]
+    .filter(Boolean)
+    .join(' ');
+
+  const connectSrc = [`'self'`, plausibleEnabled ? plausibleHost : null]
+    .filter(Boolean)
+    .join(' ');
 
   const directives = [
     `default-src 'self'`,
@@ -21,7 +35,7 @@ function buildCsp(nonce: string, isDev: boolean) {
     `style-src 'self' 'unsafe-inline'`,
     `img-src 'self' data: blob:`,
     `font-src 'self' data:`,
-    `connect-src 'self'`,
+    `connect-src ${connectSrc}`,
     `media-src 'self'`,
     `frame-ancestors 'none'`,
     `form-action 'self'`,

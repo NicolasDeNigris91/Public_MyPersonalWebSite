@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ExternalLink, GitBranch, BookOpen } from 'lucide-react';
 import { EASE_STANDARD } from '@/lib/motion';
+import { track } from '@/lib/analytics';
 import type { Project } from '@/types';
 
 interface ProjectCardProps {
@@ -43,6 +44,9 @@ export function ProjectCard({ project, caseStudySlug }: ProjectCardProps) {
                 href={project.repoHref}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  track('project_repo_click', { project: project.id })
+                }
                 className="text-chrome hover:text-gold-leaf transition-colors duration-200"
                 aria-label="View source code"
               >
@@ -54,6 +58,9 @@ export function ProjectCard({ project, caseStudySlug }: ProjectCardProps) {
                 href={project.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() =>
+                  track('project_live_click', { project: project.id })
+                }
                 className="text-chrome hover:text-gold-leaf transition-colors duration-200"
                 aria-label="View live project"
               >
