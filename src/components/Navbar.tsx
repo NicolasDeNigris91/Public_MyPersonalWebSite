@@ -109,10 +109,8 @@ export function Navbar() {
     document.addEventListener('keydown', handleKey);
     document.body.style.overflow = 'hidden';
 
-    requestAnimationFrame(() => {
-      const first = dialogRef.current?.querySelector<HTMLElement>(FOCUSABLE);
-      first?.focus();
-    });
+    const first = dialogRef.current?.querySelector<HTMLElement>(FOCUSABLE);
+    first?.focus();
 
     return () => {
       document.removeEventListener('keydown', handleKey);

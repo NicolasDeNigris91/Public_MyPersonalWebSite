@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 
 test.describe('home', () => {
   test('renders hero, projects and contact', async ({ page }) => {
-    await page.goto('/');
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
     await expect(page.getByRole('heading', { level: 1 })).toContainText(
       'Nicolas',
     );
@@ -14,8 +14,7 @@ test.describe('home', () => {
   test('has no axe violations of severity serious or critical', async ({
     page,
   }) => {
-    await page.goto('/');
-    await page.waitForLoadState('networkidle');
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
     await page.evaluate(() => document.fonts?.ready);
 
     // color-contrast is audited separately as a design pass — the editorial
@@ -55,7 +54,7 @@ test.describe('home', () => {
         true,
       );
     });
-    await page.goto('/');
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
 
     const link = page
       .getByRole('link', { name: /clique para copiar/i })
@@ -71,7 +70,7 @@ test.describe('home', () => {
   test('all external links carry rel="noopener noreferrer"', async ({
     page,
   }) => {
-    await page.goto('/');
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
     const externals = page.locator('a[target="_blank"]');
     const count = await externals.count();
     expect(count).toBeGreaterThan(0);
@@ -87,7 +86,7 @@ test.describe('home', () => {
     page,
   }) => {
     await page.setViewportSize({ width: 390, height: 844 });
-    await page.goto('/');
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
 
     const trigger = page.getByRole('button', { name: 'Abrir menu' });
     await trigger.click();

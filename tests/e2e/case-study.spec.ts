@@ -44,7 +44,7 @@ test.describe('case study', () => {
   test('navigates from a project card on the home into the case study', async ({
     page,
   }) => {
-    await page.goto('/');
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
     await page.getByRole('link', { name: 'Portfolio Pessoal' }).first().click();
     await expect(page).toHaveURL(/\/projects\/portfolio\/?$/);
     await expect(page.getByRole('heading', { level: 1 })).toContainText(
@@ -55,7 +55,7 @@ test.describe('case study', () => {
   test('shared title carries a view-transition-name on both ends', async ({
     page,
   }) => {
-    await page.goto('/');
+    await page.goto('/', { waitUntil: 'domcontentloaded' });
     const cardTitleStyle = await page
       .locator('#projects h3', { hasText: 'Portfolio Pessoal' })
       .first()
