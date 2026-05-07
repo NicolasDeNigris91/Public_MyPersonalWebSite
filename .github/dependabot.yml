@@ -27,3 +27,8 @@ updates:
     groups:
       minor-and-patch:
         update-types: ['minor', 'patch']
+    ignore:
+      # eslint 10 requires upstream peer-dep updates from eslint-plugin-jsx-a11y
+      # (transitive via eslint-config-next). Re-enable when those peers support eslint 10.
+      - dependency-name: 'eslint'
+        update-types: ['version-update:semver-major']
