@@ -15,7 +15,7 @@ const NAME_MAX = 120;
 const EMAIL_MAX = 320;
 const MESSAGE_MIN = 10;
 const MESSAGE_MAX = 4000;
-const EMAIL_RX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const EMAIL_RX = /^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/;
 
 function sanitise(input: unknown): ContactPayload | { error: string } {
   if (!input || typeof input !== 'object') return { error: 'invalid payload' };
@@ -28,10 +28,13 @@ function sanitise(input: unknown): ContactPayload | { error: string } {
     return { error: 'name required' };
   }
   if (name.length > NAME_MAX) return { error: 'name too long' };
-  if (typeof email !== 'string' || !EMAIL_RX.test(email)) {
+  if (typeof email !== 'string') {
     return { error: 'email invalid' };
   }
   if (email.length > EMAIL_MAX) return { error: 'email too long' };
+  if (!EMAIL_RX.test(email)) {
+    return { error: 'email invalid' };
+  }
   if (typeof message !== 'string' || message.trim().length < MESSAGE_MIN) {
     return { error: 'message too short' };
   }

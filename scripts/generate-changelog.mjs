@@ -18,7 +18,7 @@
  * Writes CHANGELOG.md at the repo root. Idempotent - running twice with
  * no new commits produces the same file.
  */
-import { execSync } from 'node:child_process';
+import { execFileSync } from 'node:child_process';
 import { writeFileSync } from 'node:fs';
 import { resolve, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -27,7 +27,7 @@ const here = dirname(fileURLToPath(import.meta.url));
 const root = resolve(here, '..');
 
 function git(args) {
-  return execSync(`git ${args}`, {
+  return execFileSync('git', args, {
     cwd: root,
     encoding: 'utf8',
   }).trim();
@@ -39,14 +39,14 @@ const to = toArg ?? 'HEAD';
 let from = fromArg;
 if (!from) {
   try {
-    from = git('describe --tags --abbrev=0 --match "v*.*.*"');
+    from = git(['describe', '--tags', '--abbrev=0', '--match', 'v*.*.*']);
   } catch {
-    from = git('rev-list --max-parents=0 HEAD').split('\n')[0];
+    from = git(['rev-list', '--max-parents=0', 'HEAD']).split('\n')[0];
   }
 }
 
 const range = from === to ? to : `${from}..${to}`;
-const log = git(`log ${range} --pretty=format:%H%x09%s --no-merges`);
+const log = git(['log', range, '--pretty=format:%H%x09%s', '--no-merges']);
 
 const SECTIONS = [
   ['feat', 'Features'],
