@@ -35,10 +35,9 @@ export default function ContactPage() {
           </h1>
           <div className="bg-gold-leaf mt-6 h-px w-32" />
           <p className="text-body-lg text-chrome mt-8 font-sans leading-relaxed">
-            Para projetos, conversas técnicas ou a primeira tentativa de me
-            convencer a voltar para a joalharia: o formulário ao lado chega
-            direto na minha caixa, com uma queda graciosa para o email caso o
-            envio falhe.
+            Para projetos, conversas técnicas ou só pra dar um oi: use o
+            formulário ao lado e a mensagem cai direto no meu email. Se preferir
+            escrever direto, o endereço está logo abaixo.
           </p>
 
           <dl className="mt-12 space-y-8">
