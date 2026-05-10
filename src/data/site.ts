@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
   phone: '(11) 98383-2041',
   phoneLink: 'tel:+5511983832041',
   github: 'https://github.com/NicolasDeNigris91',
-  linkedin: 'https://www.linkedin.com/in/nicolas-pilegi-de-nigris-10ab0a349/',
+  linkedin: 'https://www.linkedin.com/in/nicolasdenigris/',
   location: 'São Paulo, SP',
 };
 
