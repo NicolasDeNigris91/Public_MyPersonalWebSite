@@ -4,34 +4,17 @@ import { skillsData } from '@/data/site';
 const ROMAN_NUMERALS = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII'];
 
 export function Skills() {
-  const totalItems = skillsData.reduce(
-    (sum, skill) => sum + skill.items.length,
-    0,
-  );
-
   return (
     <section id="skills" className="px-8 py-24 md:px-16 lg:px-24">
       <div className="mx-auto max-w-5xl">
-        <div className="border-mist/30 mb-16 flex flex-col gap-8 border-b pb-10 md:mb-20 md:flex-row md:items-end md:justify-between">
-          <div>
-            <p className="text-caption text-racing-green-lit tracking-luxury mb-3 font-mono uppercase">
-              Inventário técnico
-            </p>
-            <h2 className="font-display text-display-lg text-pearl">
-              Skills e ferramentas
-            </h2>
-          </div>
-          <p className="text-left md:text-right">
-            <strong
-              data-numeric
-              className="font-display text-gold-leaf mb-1 block text-2xl font-normal italic"
-            >
-              {totalItems}
-            </strong>
-            <span className="text-caption tracking-luxury text-mist font-mono uppercase">
-              itens em quatro categorias
-            </span>
+        <div className="mb-16 flex flex-col">
+          <p className="text-caption text-racing-green-lit tracking-luxury mb-3 font-mono uppercase">
+            Inventário técnico
           </p>
+          <h2 className="font-display text-display-lg text-pearl">
+            Skills e ferramentas
+          </h2>
+          <div className="bg-gold-leaf mt-6 h-px w-32" />
         </div>
 
         <ol className="list-none">
