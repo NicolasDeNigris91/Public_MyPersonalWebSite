@@ -14,7 +14,7 @@ export const siteConfig: SiteConfig = {
 export const skillsData: Skill[] = [
   {
     category: 'Linguagens',
-    items: ['Python', 'Java', 'TypeScript', 'JavaScript', 'Go', 'C#'],
+    items: ['Python', 'Java', 'TypeScript', 'JavaScript', 'Go', 'C#', 'Rust'],
   },
   {
     category: 'Frameworks',
