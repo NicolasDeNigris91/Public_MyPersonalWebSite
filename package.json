@@ -62,7 +62,7 @@
   "overrides": {
     "fast-uri": "^3.1.5",
     "postcss": "^8.5.14",
-    "tmp": "^0.2.5"
+    "tmp": "^0.2.7"
   },
   "engines": {
     "node": ">=22"
