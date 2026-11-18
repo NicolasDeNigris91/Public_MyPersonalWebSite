@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    'Portfolio de Nicolas Pilegi De Nigris. Depois de dez anos na joalharia de luxo, hoje construo aplicações web full stack.',
+    'Portfolio de Nicolas Pilegi De Nigris. Depois de dez anos na joalheria de luxo, hoje construo aplicações web full stack.',
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.name, url: siteConfig.github }],
   creator: siteConfig.name,
