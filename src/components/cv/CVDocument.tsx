@@ -239,7 +239,7 @@ const styles = StyleSheet.create({
 });
 
 const BIO =
-  'Depois de dez anos na joalharia de luxo, reorientei a carreira para o desenvolvimento de software. Hoje construo aplicações web full stack com Python, TypeScript, Java e Go, com cuidado tipográfico e operacional do mesmo nível que aprendi com peças únicas.';
+  'Depois de dez anos na joalheria de luxo, reorientei a carreira para o desenvolvimento de software. Hoje construo aplicações web full stack com Python, TypeScript, Java e Go, com cuidado tipográfico e operacional do mesmo nível que aprendi com peças únicas.';
 
 export function CVDocument() {
   const work = experienceData.filter((e) => e.type === 'work');

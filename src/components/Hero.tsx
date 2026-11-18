@@ -74,7 +74,7 @@ export function Hero() {
             variants={fadeSlideUp}
             className="text-body-lg text-chrome mb-12 font-sans leading-relaxed"
           >
-            Depois de dez anos na joalharia de luxo, reorientei a carreira para
+            Depois de dez anos na joalheria de luxo, reorientei a carreira para
             o desenvolvimento de software. Hoje construo aplicações web full
             stack.
           </motion.p>
